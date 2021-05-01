@@ -3,7 +3,6 @@ package com.bootcamp.springboot.bootcampdemo;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.function.Predicate;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,27 +20,27 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 @EnableSwagger2WebMvc
 public class SwaggerConfig {
 
-    public static final Contact DEFAULT_CONTACT = new Contact(
-            "Constantin Tofan", "", "constantin.tofan@nttdata.com");
-
-    public static final ApiInfo DEFAULT_API_INFO = new ApiInfo(
-            "Users API", "Serve api to micro frontend", "1.0",
-            "urn:tos", DEFAULT_CONTACT,
-            "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0", Arrays.asList());
-
-    private static final Set<String> DEFAULT_PRODUCES_AND_CONSUMES =
-            new HashSet<String>(Arrays.asList("application/json",
-                    "application/xml"));
+//    public static final Contact DEFAULT_CONTACT = new Contact(
+//            "Constantin Tofan", "", "constantin.tofan@nttdata.com");
+//
+//    public static final ApiInfo DEFAULT_API_INFO = new ApiInfo(
+//            "Users API", "Serve api to micro frontend", "1.0",
+//            "urn:tos", DEFAULT_CONTACT,
+//            "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0", Arrays.asList());
+//
+//    private static final Set<String> DEFAULT_PRODUCES_AND_CONSUMES =
+//            new HashSet<String>(Arrays.asList("application/json",
+//                    "application/xml"));
 
     @Bean
     public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
-                .paths(PathSelectors.any())
-                .build()
-                .apiInfo(DEFAULT_API_INFO)
-                .produces(DEFAULT_PRODUCES_AND_CONSUMES)
-                .consumes(DEFAULT_PRODUCES_AND_CONSUMES);
+        return new Docket(DocumentationType.SWAGGER_2);
+//                .select()
+//                .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
+//                .paths(PathSelectors.any())
+//                .build()
+//                .apiInfo(DEFAULT_API_INFO)
+//                .produces(DEFAULT_PRODUCES_AND_CONSUMES)
+//                .consumes(DEFAULT_PRODUCES_AND_CONSUMES);
     }
 }
