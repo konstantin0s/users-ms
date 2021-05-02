@@ -87,7 +87,7 @@ public class UserResourceTest {
                         Mockito.any(User.class))).thenReturn(null);
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders
-                .post("http://localhost:8080/users")
+                .post("http://localhost:8082/users")
                 .accept(MediaType.APPLICATION_JSON).content(exampleUserJson)
                 .contentType(MediaType.APPLICATION_JSON);
 
@@ -98,7 +98,7 @@ public class UserResourceTest {
 
 //        assertEquals(HttpStatus.CREATED.value(), response.getStatus());
 
-//         assertEquals("http://localhost:8080/users",
+//         assertEquals("http://localhost:8090/users",
 //                response.getHeader(HttpHeaders.LOCATION));
 
     }
