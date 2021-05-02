@@ -15,25 +15,6 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
         <java.version>1.7</java.version>
-
-		<Server>
-			<Service name="commonservice">
-				<Connector port="8080" protocol="HTTP/1.1"
-						   connectionTimeout="-1"
-						   redirectPort="8443" />
-				<Engine><Host name="localhost">
-					<Context path="/localhost"/>
-				</Host></Engine>
-			</Service>
-			<Service name="localhost">
-				<Connector port="8082" protocol="HTTP/1.1"
-						   connectionTimeout="20000"
-						   redirectPort="8444" />
-				<Engine><Host name="localhost">
-					<Context path="/localhost"/>
-				</Host></Engine>
-			</Service>
-		</Server>
 </properties>
 	<dependencies>
 		<dependency>
